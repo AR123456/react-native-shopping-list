@@ -6,7 +6,6 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text>Edit app/index.tsx to edit this screen.</Text>
-      <Image />
     </View>
   );
 }
