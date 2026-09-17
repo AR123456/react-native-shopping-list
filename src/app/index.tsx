@@ -1,11 +1,10 @@
-// import "../../global.css";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
     <View style={styles.container}>
       <Text className="text-red-500">
-        Edit app/index.tsx to edit this screen this should be red.
+        Edit app/index.tsx to edit this screen.
       </Text>
     </View>
   );
