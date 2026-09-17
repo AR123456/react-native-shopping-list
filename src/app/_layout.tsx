@@ -1,4 +1,4 @@
-import { Stack, Slot } from "expo-router";
+import { Stack } from "expo-router";
 import { ClerkProvider } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
 import "../../global.css";
@@ -9,7 +9,7 @@ if (!publishableKey) {
 export default function RootLayout() {
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-      <Slot />
+      <Stack />
     </ClerkProvider>
   );
 }
