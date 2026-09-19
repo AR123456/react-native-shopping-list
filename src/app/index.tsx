@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text className="text-red-500">
+      <Text className="text-red-500 bg-purple-500">
         Edit app/index.tsx to edit this screen.
       </Text>
     </View>
