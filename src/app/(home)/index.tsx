@@ -1,7 +1,7 @@
 // TBD content
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { useClerk } from '@clerk/expo';
+import {Link} from "expo-router";
+import { Show,useClerk,useUser } from '@clerk/expo';
 
 export default function Page() {
     const (user)=useUser();
@@ -19,7 +19,7 @@ export default function Page() {
         </Link>
       </Show>
       <Show>
-        <Text>Hello user </Text>
+        <Text>Hello user{user?emailAddress[0].emailAddress} </Text>
         <Pressable onPress={(()=>signOut()}>
             <Text>Sign Out</Text>
         </Pressable>
