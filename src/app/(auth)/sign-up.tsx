@@ -49,6 +49,7 @@ export default function Page() {
     const { error: finalizeError } = await signUp.finalize();
     if (finalizeError) {
       // Handle the error in your app.
+      console.error(JSON.stringify(error, null, 2));
     }
   };
 
