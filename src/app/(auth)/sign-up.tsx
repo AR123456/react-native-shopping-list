@@ -10,15 +10,15 @@ import {
   View,
 } from "react-native";
 
-export default function MainScreen() {
+export default function Page() {
+  const { signUp, errors, fetchStatus } = useSignUp();
   const { isLoaded, isSignedIn } = useAuth();
-  const { signUp } = useSignUp();
-
+  const router = useRouter();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
   const [isVerifying, setIsVerifying] = useState(false);
-
+  // aka handleSubmit
   const handleSignUp = async () => {
     const { error } = await signUp.password({ emailAddress, password });
     if (error) {
