@@ -42,6 +42,7 @@ export default function Page() {
     const { error } = await signUp.verifications.verifyEmailCode({ code });
     if (error) {
       // Handle the error in your app.
+      console.error(JSON.stringify(error, null, 2));
       return;
     }
 
