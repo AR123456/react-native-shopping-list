@@ -31,6 +31,7 @@ export default function Page() {
     const { error: sendError } = await signUp.verifications.sendEmailCode();
     if (sendError) {
       // Handle the error in your app.
+      console.error(JSON.stringify(error, null, 2));
       return;
     }
 
