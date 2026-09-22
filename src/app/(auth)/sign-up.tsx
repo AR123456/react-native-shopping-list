@@ -24,6 +24,7 @@ export default function Page() {
     if (error) {
       // Handle the error in your app.
       // See https://clerk.com/docs/guides/development/custom-flows/error-handling
+      console.error(JSON.stringify(error, null, 2));
       return;
     }
 
