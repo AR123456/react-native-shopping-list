@@ -50,8 +50,6 @@ export default function Page() {
     if (finalizeError) {
       // Handle the error in your app.
       console.log("signUp status:", signUp.status);
-      console.log("missing fields:", signUp.missingFields);
-      console.log("unverified fields:", signUp.unverifiedFields);
       console.error(
         "finalize failed:",
         finalizeError.message,
