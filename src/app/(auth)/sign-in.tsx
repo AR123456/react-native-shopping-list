@@ -70,7 +70,7 @@ export default function Page() {
   }
 
   return (
-    <View style={styles.container}>
+    <View className="flex-1 justify-center gap-3 p-5">
       <TextInput
         style={styles.input}
         autoCapitalize="none"
