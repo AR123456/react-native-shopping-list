@@ -51,7 +51,7 @@ export default function Page() {
 
   if (signIn.status === "needs_client_trust") {
     return (
-      <View className="flex-1 justify-center gap-3 p-5">
+      <View style={styles.container}>
         <TextInput
           style={styles.input}
           value={code}
