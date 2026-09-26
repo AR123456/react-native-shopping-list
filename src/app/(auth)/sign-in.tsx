@@ -2,7 +2,7 @@
 import { useSignIn } from "@clerk/expo";
 import { Link } from "expo-router";
 import { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 
 export default function Page() {
   const { signIn, fetchStatus } = useSignIn();
@@ -51,9 +51,9 @@ export default function Page() {
 
   if (signIn.status === "needs_client_trust") {
     return (
-      <View className="flex-1 justify-center gap-3 p-5">
+      <View style={styles.container}>
         <TextInput
-          className="rounded-lg border border-gray-300 p-3 text-base"
+          style={styles.input}
           value={code}
           placeholder="Enter your verification code"
           onChangeText={setCode}
@@ -70,9 +70,9 @@ export default function Page() {
   }
 
   return (
-    <View className="flex-1 justify-center gap-3 p-5">
+    <View style={styles.container}>
       <TextInput
-        className="rounded-lg border border-gray-300 p-3 text-base"
+        style={styles.input}
         autoCapitalize="none"
         value={emailAddress}
         placeholder="Enter email"
@@ -80,7 +80,7 @@ export default function Page() {
         keyboardType="email-address"
       />
       <TextInput
-        className="rounded-lg border border-gray-300 p-3 text-base"
+        style={styles.input}
         value={password}
         placeholder="Enter password"
         secureTextEntry={true}
@@ -97,3 +97,19 @@ export default function Page() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    gap: 12,
+    justifyContent: "center",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 16,
+  },
+});
