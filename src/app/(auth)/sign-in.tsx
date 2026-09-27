@@ -72,7 +72,7 @@ export default function Page() {
   return (
     <View className="flex-1 justify-center gap-3 p-5">
       <TextInput
-        style={styles.input}
+        className="rounded-lg border border-gray-300 p-3 text-base"
         autoCapitalize="none"
         value={emailAddress}
         placeholder="Enter email"
@@ -80,7 +80,7 @@ export default function Page() {
         keyboardType="email-address"
       />
       <TextInput
-        style={styles.input}
+        className="rounded-lg border border-gray-300 p-3 text-base"
         value={password}
         placeholder="Enter password"
         secureTextEntry={true}
