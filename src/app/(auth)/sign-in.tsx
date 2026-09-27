@@ -2,14 +2,13 @@
 import { useSignIn } from "@clerk/expo";
 import { Link } from "expo-router";
 import { useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Button, Text, TextInput, View } from "react-native";
 
 export default function Page() {
   const { signIn, fetchStatus } = useSignIn();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
-  import { SafeAreaView } from "react-native-safe-area-context";
 
   const handleSignIn = async () => {
     const { error } = await signIn.password({ emailAddress, password });
@@ -52,7 +51,7 @@ export default function Page() {
 
   if (signIn.status === "needs_client_trust") {
     return (
-      <SafeAreaView className="flex-1 justify-center gap-3 p-5">
+      <View className="flex-1 justify-center gap-3 p-5">
         <TextInput
           className="rounded-lg border border-gray-300 p-3 text-base"
           value={code}
@@ -60,13 +59,13 @@ export default function Page() {
           onChangeText={setCode}
           keyboardType="numeric"
         />
-        <Pressable title="Verify" onPress={handleVerify} />
-        <Pressable
+        <Button title="Verify" onPress={handleVerify} />
+        <Button
           title="I need a new code"
           onPress={() => signIn.mfa.sendEmailCode()}
         />
-        <Pressable title="Start over" onPress={() => signIn.reset()} />
-      </SafeAreaView>
+        <Button title="Start over" onPress={() => signIn.reset()} />
+      </View>
     );
   }
 
