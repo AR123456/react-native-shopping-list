@@ -2,14 +2,13 @@
 import { useSignIn } from "@clerk/expo";
 import { Link } from "expo-router";
 import { useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
-
+import { Pressable, Text, TextInput } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function Page() {
   const { signIn, fetchStatus } = useSignIn();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
   const [code, setCode] = useState("");
-  import { SafeAreaView } from "react-native-safe-area-context";
 
   const handleSignIn = async () => {
     const { error } = await signIn.password({ emailAddress, password });
