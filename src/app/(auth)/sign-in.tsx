@@ -72,7 +72,9 @@ export default function Page() {
         >
           <Text className="text-base text-blue-600">I need a new code</Text>
         </Pressable>
-        <Pressable title="Start over" onPress={() => signIn.reset()} />
+        <Pressable onPress={() => signIn.reset()} className="items-center p-3">
+          <Text className="text-base text-gray-500">Start over</Text>
+        </Pressable>
       </SafeAreaView>
     );
   }
