@@ -96,11 +96,13 @@ export default function Page() {
         secureTextEntry={true}
         onChangeText={setPassword}
       />
-      <Button
-        title="Sign in"
+      <Pressable
         onPress={handleSignIn}
         disabled={fetchStatus === "fetching"}
-      />
+        className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50"
+      >
+        <Text className="text-base font-semibold text-white">Sign in</Text>
+      </Pressable>
       <Link href="/(auth)/sign-up">
         <Text>Need an account? Sign up</Text>
       </Link>
