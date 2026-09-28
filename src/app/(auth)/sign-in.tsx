@@ -80,7 +80,7 @@ export default function Page() {
   }
 
   return (
-    <View className="flex-1 justify-center gap-3 p-5">
+    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
       <TextInput
         className="rounded-lg border border-gray-300 p-3 text-base"
         autoCapitalize="none"
@@ -104,6 +104,6 @@ export default function Page() {
       <Link href="/(auth)/sign-up">
         <Text>Need an account? Sign up</Text>
       </Link>
-    </View>
+    </SafeAreaView>
   );
 }
