@@ -67,9 +67,11 @@ export default function Page() {
           <Text className="text-base font-semibold text-white">Verify</Text>
         </Pressable>
         <Pressable
-          title="I need a new code"
           onPress={() => signIn.mfa.sendEmailCode()}
-        />
+          className="items-center p-3"
+        >
+          <Text className="text-base text-blue-600">I need a new code</Text>
+        </Pressable>
         <Pressable title="Start over" onPress={() => signIn.reset()} />
       </SafeAreaView>
     );
