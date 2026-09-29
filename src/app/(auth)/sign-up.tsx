@@ -76,7 +76,7 @@ export default function Page() {
 
   if (isVerifying) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView className="flex-1 justify-center gap-3 p-5">
         <TextInput
           style={styles.input}
           value={code}
@@ -85,7 +85,7 @@ export default function Page() {
           keyboardType="numeric"
         />
         <Button title="Verify" onPress={handleVerify} />
-      </View>
+      </SafeAreaView>
     );
   }
 
