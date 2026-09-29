@@ -68,9 +68,9 @@ export default function Page() {
 
   if (isSignedIn) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView className="flex-1 items-center justify-center">
         <Text>You're signed in</Text>
-      </View>
+      </SafeAreaView>
     );
   }
 
