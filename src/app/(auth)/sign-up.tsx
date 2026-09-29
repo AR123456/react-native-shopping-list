@@ -9,7 +9,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function Page() {
   const { signUp, errors, fetchStatus } = useSignUp();
   const { isLoaded, isSignedIn } = useAuth();
