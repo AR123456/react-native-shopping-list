@@ -84,7 +84,12 @@ export default function Page() {
           onChangeText={setCode}
           keyboardType="numeric"
         />
-        <Button title="Verify" onPress={handleVerify} />
+        <Pressable
+          onPress={handleVerify}
+          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700"
+        >
+          <Text className="text-base font-semibold text-white">Verify</Text>
+        </Pressable>
       </SafeAreaView>
     );
   }
