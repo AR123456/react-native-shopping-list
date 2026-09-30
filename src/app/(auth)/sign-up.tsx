@@ -97,7 +97,7 @@ export default function Page() {
   return (
     <SafeAreaView style={styles.container}>
       <TextInput
-        style={styles.input}
+        className="rounded-lg border border-gray-300 p-3 text-base"
         autoCapitalize="none"
         value={emailAddress}
         placeholder="Enter email"
@@ -105,7 +105,7 @@ export default function Page() {
         keyboardType="email-address"
       />
       <TextInput
-        style={styles.input}
+        className="rounded-lg border border-gray-300 p-3 text-base"
         value={password}
         placeholder="Enter password"
         secureTextEntry={true}
