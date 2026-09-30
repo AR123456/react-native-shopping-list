@@ -95,7 +95,7 @@ export default function Page() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TextInput
         style={styles.input}
         autoCapitalize="none"
@@ -114,7 +114,7 @@ export default function Page() {
       <Button title="Sign up" onPress={handleSignUp} />
       {/* Required for sign-up flows on Expo web. Clerk skips the browser CAPTCHA on iOS and Android */}
       <View nativeID="clerk-captcha" />
-    </View>
+    </SafeAreaView>
   );
 }
 
