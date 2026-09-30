@@ -68,34 +68,29 @@ export default function Page() {
 
   if (isSignedIn) {
     return (
-      <SafeAreaView className="flex-1 items-center justify-center">
+      <View style={styles.container}>
         <Text>You're signed in</Text>
-      </SafeAreaView>
+      </View>
     );
   }
 
   if (isVerifying) {
     return (
-      <SafeAreaView className="flex-1 justify-center gap-3 p-5">
+      <View style={styles.container}>
         <TextInput
-          className="rounded-lg border border-gray-300 p-3 text-base"
+          style={styles.input}
           value={code}
           placeholder="Enter your verification code"
           onChangeText={setCode}
           keyboardType="numeric"
         />
-        <Pressable
-          onPress={handleVerify}
-          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700"
-        >
-          <Text className="text-base font-semibold text-white">Verify</Text>
-        </Pressable>
-      </SafeAreaView>
+        <Button title="Verify" onPress={handleVerify} />
+      </View>
     );
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <TextInput
         style={styles.input}
         autoCapitalize="none"
@@ -114,7 +109,7 @@ export default function Page() {
       <Button title="Sign up" onPress={handleSignUp} />
       {/* Required for sign-up flows on Expo web. Clerk skips the browser CAPTCHA on iOS and Android */}
       <View nativeID="clerk-captcha" />
-    </SafeAreaView>
+    </View>
   );
 }
 
