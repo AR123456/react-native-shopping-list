@@ -76,16 +76,21 @@ export default function Page() {
 
   if (isVerifying) {
     return (
-      <View style={styles.container}>
+      <SafeAreaView className="flex-1 justify-center gap-3 p-5">
         <TextInput
-          style={styles.input}
+          className="rounded-lg border border-gray-300 p-3 text-base"
           value={code}
           placeholder="Enter your verification code"
           onChangeText={setCode}
           keyboardType="numeric"
         />
-        <Button title="Verify" onPress={handleVerify} />
-      </View>
+        <Pressable
+          onPress={handleVerify}
+          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700"
+        >
+          <Text className="text-base font-semibold text-white">Verify</Text>
+        </Pressable>
+      </SafeAreaView>
     );
   }
 
