@@ -118,9 +118,6 @@ export default function Page() {
       >
         <Text className="text-base font-semibold text-white">Sign up</Text>
       </Pressable>
-      <Link href="/(auth)/sign-in">
-        <Text>Already have an account? Sign in</Text>
-      </Link>
       {/* Required for sign-up flows on Expo web. Clerk skips the browser CAPTCHA on iOS and Android */}
       <View nativeID="clerk-captcha" />
     </SafeAreaView>
