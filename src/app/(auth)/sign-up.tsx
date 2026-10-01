@@ -111,7 +111,13 @@ export default function Page() {
         secureTextEntry={true}
         onChangeText={setPassword}
       />
-      <Button title="Sign up" onPress={handleSignUp} />
+      <Pressable
+        onPress={handleSignUp}
+        disabled={fetchStatus === "fetching"}
+        className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50"
+      >
+        <Text className="text-base font-semibold text-white">Sign up</Text>
+      </Pressable>
       {/* Required for sign-up flows on Expo web. Clerk skips the browser CAPTCHA on iOS and Android */}
       <View nativeID="clerk-captcha" />
     </SafeAreaView>
