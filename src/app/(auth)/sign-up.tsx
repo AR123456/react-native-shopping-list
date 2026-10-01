@@ -95,7 +95,7 @@ export default function Page() {
   }
 
   return (
-    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
+    <SafeAreaView style={styles.container}>
       <TextInput
         className="rounded-lg border border-gray-300 p-3 text-base"
         autoCapitalize="none"
@@ -126,3 +126,19 @@ export default function Page() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    gap: 12,
+    justifyContent: "center",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 16,
+  },
+});
