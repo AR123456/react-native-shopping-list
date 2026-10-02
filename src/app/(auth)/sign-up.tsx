@@ -49,15 +49,7 @@ export default function Page() {
     const { error: finalizeError } = await signUp.finalize();
     if (finalizeError) {
       //TODO something meaningful here in finalizeError block
-      // Handle the error in your app.
-      // console.log("signUp status:", signUp.status);
-      // console.log("missing fields:", signUp.missingFields);
-      // console.log("unverified fields:", signUp.unverifiedFields);
-      // console.error(
-      //   "finalize failed:",
-      //   finalizeError.message,
-      //   finalizeError.code,
-      // );
+
       console.log("full finalize error:", finalizeError);
     }
   };
@@ -95,7 +87,7 @@ export default function Page() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
       <TextInput
         className="rounded-lg border border-gray-300 p-3 text-base"
         autoCapitalize="none"
@@ -118,24 +110,11 @@ export default function Page() {
       >
         <Text className="text-base font-semibold text-white">Sign up</Text>
       </Pressable>
+      <Link href="/(auth)/sign-in">
+        <Text>Already have an account? Sign in</Text>
+      </Link>
       {/* Required for sign-up flows on Expo web. Clerk skips the browser CAPTCHA on iOS and Android */}
       <View nativeID="clerk-captcha" />
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    gap: 12,
-    justifyContent: "center",
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 8,
-    padding: 12,
-    fontSize: 16,
-  },
-});
