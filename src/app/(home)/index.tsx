@@ -2,14 +2,14 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { Show, useClerk, useUser } from "@clerk/expo";
-
+import { SafeAreaView } from "react-native-safe-area-context";
 export default function Page() {
   const { user } = useUser();
   const { signOut } = useClerk();
 
   return (
-    <View>
-      <Text>Welcome</Text>
+    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
+      <Text className="text-xl font-semibold">Welcome</Text>
       <Show when="signed-out">
         <Link href="/(auth)/sign-in">
           <Text>Sign in</Text>
@@ -24,7 +24,7 @@ export default function Page() {
           <Text>Sign Out</Text>
         </Pressable>
       </Show>
-    </View>
+    </SafeAreaView>
   );
 }
 
