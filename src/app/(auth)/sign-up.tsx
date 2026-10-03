@@ -49,15 +49,7 @@ export default function Page() {
     const { error: finalizeError } = await signUp.finalize();
     if (finalizeError) {
       //TODO something meaningful here in finalizeError block
-      // Handle the error in your app.
-      // console.log("signUp status:", signUp.status);
-      // console.log("missing fields:", signUp.missingFields);
-      // console.log("unverified fields:", signUp.unverifiedFields);
-      // console.error(
-      //   "finalize failed:",
-      //   finalizeError.message,
-      //   finalizeError.code,
-      // );
+
       console.log("full finalize error:", finalizeError);
     }
   };
