@@ -20,18 +20,18 @@ export default function Page() {
   const [isVerifying, setIsVerifying] = useState(false);
   // aka handleSubmit
   const handleSignUp = async () => {
-    const { error } = await signUp.password({ emailAddress, password });
-    if (error) {
-      // Handle the error in your app.
-      // See https://clerk.com/docs/guides/development/custom-flows/error-handling
-      console.error(JSON.stringify(error, null, 2));
+    const { error: passwordError } = await signUp.password({
+      emailAddress,
+      password,
+    });
+    if (passwordError) {
+      console.error(JSON.stringify(passwordError, null, 2));
       return;
     }
 
     const { error: sendError } = await signUp.verifications.sendEmailCode();
     if (sendError) {
-      // Handle the error in your app.
-      console.error(JSON.stringify(error, null, 2));
+      console.error(JSON.stringify(sendError, null, 2));
       return;
     }
 
