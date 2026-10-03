@@ -20,18 +20,18 @@ export default function Page() {
   const [isVerifying, setIsVerifying] = useState(false);
   // aka handleSubmit
   const handleSignUp = async () => {
-    const { error: passwordError } = await signUp.password({
-      emailAddress,
-      password,
-    });
-    if (passwordError) {
-      console.error(JSON.stringify(passwordError, null, 2));
+    const { error } = await signUp.password({ emailAddress, password });
+    if (error) {
+      // Handle the error in your app.
+      // See https://clerk.com/docs/guides/development/custom-flows/error-handling
+      console.error(JSON.stringify(error, null, 2));
       return;
     }
 
     const { error: sendError } = await signUp.verifications.sendEmailCode();
     if (sendError) {
-      console.error(JSON.stringify(sendError, null, 2));
+      // Handle the error in your app.
+      console.error(JSON.stringify(error, null, 2));
       return;
     }
 
@@ -49,7 +49,15 @@ export default function Page() {
     const { error: finalizeError } = await signUp.finalize();
     if (finalizeError) {
       //TODO something meaningful here in finalizeError block
-
+      // Handle the error in your app.
+      // console.log("signUp status:", signUp.status);
+      // console.log("missing fields:", signUp.missingFields);
+      // console.log("unverified fields:", signUp.unverifiedFields);
+      // console.error(
+      //   "finalize failed:",
+      //   finalizeError.message,
+      //   finalizeError.code,
+      // );
       console.log("full finalize error:", finalizeError);
     }
   };
@@ -87,7 +95,7 @@ export default function Page() {
   }
 
   return (
-    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
+    <SafeAreaView style={styles.container}>
       <TextInput
         className="rounded-lg border border-gray-300 p-3 text-base"
         autoCapitalize="none"
@@ -118,3 +126,19 @@ export default function Page() {
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    gap: 12,
+    justifyContent: "center",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    padding: 12,
+    fontSize: 16,
+  },
+});

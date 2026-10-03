@@ -2,7 +2,7 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 import { Show, useClerk, useUser } from "@clerk/expo";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 export default function Page() {
   const { user } = useUser();
   const { signOut } = useClerk();
