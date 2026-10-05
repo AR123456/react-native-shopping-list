@@ -8,7 +8,7 @@ export default function Page() {
   const { signOut } = useClerk();
 
   return (
-    <View>
+    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
       <Text>Welcome</Text>
       <Show when="signed-out">
         <Link href="/(auth)/sign-in">
@@ -24,7 +24,7 @@ export default function Page() {
           <Text>Sign Out</Text>
         </Pressable>
       </Show>
-    </View>
+    </SafeAreaView>
   );
 }
 
