@@ -15,11 +15,13 @@ export default function Page() {
           <Text>Sign in</Text>
         </Link>
         <Link href="/(auth)/sign-up">
-          <Text>Sign up</Text>
+          <Text className="text-base text-blue-600">Sign in</Text>
         </Link>
       </Show>
       <Show when="signed-in">
-        <Text>Hello user {user?.emailAddresses[0].emailAddress} </Text>
+        <Text className="text-base">
+          Hello user {user?.emailAddresses[0].emailAddress}
+        </Text>
         <Pressable onPress={() => signOut()}>
           <Text>Sign Out</Text>
         </Pressable>
