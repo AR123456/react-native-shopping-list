@@ -26,7 +26,7 @@ export default function Page() {
           onPress={() => signOut()}
           className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700"
         >
-          <Text>Sign Out</Text>
+          <Text className="text-base font-semibold text-white">Sign Out</Text>
         </Pressable>
       </Show>
     </SafeAreaView>
