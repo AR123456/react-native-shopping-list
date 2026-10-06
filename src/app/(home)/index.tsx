@@ -32,5 +32,3 @@ export default function Page() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({});
