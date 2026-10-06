@@ -22,7 +22,10 @@ export default function Page() {
         <Text className="text-base">
           Hello user {user?.emailAddresses[0].emailAddress}
         </Text>
-        <Pressable onPress={() => signOut()}>
+        <Pressable
+          onPress={() => signOut()}
+          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700"
+        >
           <Text>Sign Out</Text>
         </Pressable>
       </Show>
