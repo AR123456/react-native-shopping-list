@@ -15,7 +15,7 @@ export default function Page() {
           <Text>Sign in</Text>
         </Link>
         <Link href="/(auth)/sign-up">
-          <Text className="text-base text-blue-600">Sign in</Text>
+          <Text className="text-base text-blue-600">Sign up</Text>
         </Link>
       </Show>
       <Show when="signed-in">
