@@ -1,5 +1,6 @@
 // for sign in - attempt from claude
 import { useSignIn } from "@clerk/expo";
+import { Image } from "expo-image";
 import { Link } from "expo-router";
 import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
@@ -87,7 +88,7 @@ export default function Page() {
         <Text>Grocify</Text>
         <Text> Plan smarter. Shop happier</Text>
         <View>
-          <Image></Image>
+          <Image source={require("../../../assets/images/auth.png")} />
         </View>
       </View>
       <TextInput
