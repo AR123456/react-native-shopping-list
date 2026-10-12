@@ -86,6 +86,9 @@ export default function Page() {
       <View>
         <Text>Grocify</Text>
         <Text> Plan smarter. Shop happier</Text>
+        <View>
+          <Image></Image>
+        </View>
       </View>
       <TextInput
         className="rounded-lg border border-gray-300 p-3 text-base"
