@@ -92,7 +92,7 @@ export default function Page() {
           {" "}
           Plan smarter. Shop happier
         </Text>
-        <View>
+        <View className="mt-6 rounded-[30px] border border-white/20 bg-white/10 p-3">
           <Image source={require("../../../assets/images/auth.png")} />
         </View>
       </View>
