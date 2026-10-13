@@ -88,7 +88,10 @@ export default function Page() {
         <Text className="text-center text-5xl font-extrabold tracking-tight text-primary-foreground uppercase font-mono dark:text-foreground">
           Grocify
         </Text>
-        <Text> Plan smarter. Shop happier</Text>
+        <Text className="mt-1 text-center text-[14px] text-primary-foreground/80 dark:text-foreground/75">
+          {" "}
+          Plan smarter. Shop happier
+        </Text>
         <View>
           <Image source={require("../../../assets/images/auth.png")} />
         </View>
