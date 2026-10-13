@@ -85,7 +85,9 @@ export default function Page() {
       <View className="absolute -left-16 top-12 h-56 w-56 rounded-full bg-primary/80 dark:bg-background/40" />
       <View className="absolute right-[-74px] top-40 h-72 w-72 rounded-full bg-primary/70 dark:bg-background/35" />
       <View className="px-6 pt-4">
-        <Text>Grocify</Text>
+        <Text className="text-center text-5xl font-extrabold tracking-tight text-primary-foreground uppercase font-mono dark:text-foreground">
+          Grocify
+        </Text>
         <Text> Plan smarter. Shop happier</Text>
         <View>
           <Image source={require("../../../assets/images/auth.png")} />
