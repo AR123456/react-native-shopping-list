@@ -87,36 +87,34 @@ export default function Page() {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-primary dark:bg-secondary justify-center gap-3 p-5">
-      <View className="absolute -left-16 top-12 h-56 w-56 rounded-full bg-primary/90 dark:bg-background/40" />
-      <View className="absolute right-[-74px] top-40 h-72 w-72 rounded-full bg-primary/90 dark:bg-background/35" />
-      <View>
-        <TextInput
-          className="rounded-lg border border-gray-300 p-3 text-base"
-          autoCapitalize="none"
-          value={emailAddress}
-          placeholder="Enter email"
-          onChangeText={setEmailAddress}
-          keyboardType="email-address"
-        />
-        <TextInput
-          className="rounded-lg border border-gray-300 p-3 text-base"
-          value={password}
-          placeholder="Enter password"
-          secureTextEntry={true}
-          onChangeText={setPassword}
-        />
-        <Pressable
-          onPress={handleSignUp}
-          disabled={fetchStatus === "fetching"}
-          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50"
-        >
-          <Text className="text-base font-semibold text-white">Sign up</Text>
-        </Pressable>
-        <Link href="/(auth)/sign-in">
-          <Text>Already have an account? Sign in</Text>
-        </Link>
-      </View>
+    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
+      <View className="absolute -left-16 top-12 h-56 w-56 rounded-full bg-primary/80 dark:bg-background/40 " />
+      <View className="absolute right-[-74px] top-40 h-72 w-72 rounded-full bg-primary/70 dark:bg-background/35" />
+      <TextInput
+        className="rounded-lg border border-gray-300 p-3 text-base"
+        autoCapitalize="none"
+        value={emailAddress}
+        placeholder="Enter email"
+        onChangeText={setEmailAddress}
+        keyboardType="email-address"
+      />
+      <TextInput
+        className="rounded-lg border border-gray-300 p-3 text-base"
+        value={password}
+        placeholder="Enter password"
+        secureTextEntry={true}
+        onChangeText={setPassword}
+      />
+      <Pressable
+        onPress={handleSignUp}
+        disabled={fetchStatus === "fetching"}
+        className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50"
+      >
+        <Text className="text-base font-semibold text-white">Sign up</Text>
+      </Pressable>
+      <Link href="/(auth)/sign-in">
+        <Text>Already have an account? Sign in</Text>
+      </Link>
       {/* Required for sign-up flows on Expo web. Clerk skips the browser CAPTCHA on iOS and Android */}
       <View nativeID="clerk-captcha" />
     </SafeAreaView>
