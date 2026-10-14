@@ -100,7 +100,9 @@ export default function Page() {
         </View>
       </View>
       <View className="mt-8 flex-1 rounded-t-[36px] bg-card px-6 pb-8 pt-6">
-        <Text>Welcome Back</Text>
+        <Text className="text-xs text-center font-semibold uppercase tracking-[1px] pb-8">
+          Welcome Back
+        </Text>
         <TextInput
           className="rounded-lg border border-gray-300 p-3 text-base"
           autoCapitalize="none"
@@ -110,7 +112,7 @@ export default function Page() {
           keyboardType="email-address"
         />
         <TextInput
-          className="rounded-lg border border-gray-300 p-3 text-base"
+          className="rounded-lg border border-gray-300 p-3 text-base mb-8"
           value={password}
           placeholder="Enter password"
           secureTextEntry={true}
