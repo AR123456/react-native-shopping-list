@@ -106,7 +106,7 @@ export default function Page() {
           />
         </View>
       </View>
-      <View>
+      <View className="mt-8 flex-1 rounded-t-[36px] bg-card px-6 pb-8 pt-6">
         <TextInput
           className="rounded-lg border border-gray-300 p-3 text-base"
           autoCapitalize="none"
