@@ -1,4 +1,5 @@
 import { useAuth, useSignUp } from "@clerk/expo";
+import { Image } from "expo-image";
 import { type Href, Link, useRouter } from "expo-router";
 import { useState } from "react";
 import {
@@ -97,6 +98,13 @@ export default function Page() {
         <Text className="mt-1 text-center text-[14px] text-primary-foreground/80 dark:text-foreground/75">
           Plan smarter. Shop happier
         </Text>
+        <View className="mt-6 rounded-[30px] border border-white/20 bg-white/10 p-3">
+          <Image
+            source={require("../../../assets/images/auth.png")}
+            style={{ width: "100%", height: 300 }}
+            contentFit="contain"
+          />
+        </View>
       </View>
       <View>
         <TextInput
