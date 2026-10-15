@@ -90,6 +90,7 @@ export default function Page() {
     <SafeAreaView className="flex-1 bg-primary dark:bg-secondary justify-center gap-3 p-5">
       <View className="absolute -left-16 top-12 h-56 w-56 rounded-full bg-primary/90 dark:bg-background/40" />
       <View className="absolute right-[-74px] top-40 h-72 w-72 rounded-full bg-primary/90 dark:bg-background/35" />
+      <View className="px-6 pt-4"></View>
       <View>
         <TextInput
           className="rounded-lg border border-gray-300 p-3 text-base"
