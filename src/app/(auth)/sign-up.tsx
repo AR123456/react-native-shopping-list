@@ -125,7 +125,7 @@ export default function Page() {
         <Pressable
           onPress={handleSignUp}
           disabled={fetchStatus === "fetching"}
-          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50"
+          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50 mt-8"
         >
           <Text className="text-base font-semibold text-white">Sign up</Text>
         </Pressable>
