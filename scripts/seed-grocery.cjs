@@ -83,3 +83,17 @@ const seedItems = [
     purchased: false,
   },
 ];
+
+async function seed() {
+  await sql`
+    CREATE TABLE IF NOT EXISTS grocery_items (
+      id TEXT PRIMARY KEY,
+      name TEXT NOT NULL,
+      category TEXT NOT NULL,
+      quantity INTEGER NOT NULL DEFAULT 1,
+      purchased BOOLEAN NOT NULL DEFAULT FALSE,
+      priority TEXT NOT NULL DEFAULT 'medium',
+      updated_at BIGINT NOT NULL
+    )
+  `;
+}
