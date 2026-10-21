@@ -96,4 +96,19 @@ async function seed() {
       updated_at BIGINT NOT NULL
     )
   `;
+
+  for (const item of seedItems) {
+    await sql`
+      INSERT INTO grocery_items (id, name, category, quantity, purchased, priority, updated_at)
+      VALUES (
+        ${crypto.randomUUID()},
+        ${item.name},
+        ${item.category},
+        ${item.quantity},
+        ${item.purchased},
+        ${item.priority},
+        ${Date.now()}
+      )
+    `;
+  }
 }
