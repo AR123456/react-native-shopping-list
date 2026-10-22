@@ -111,4 +111,5 @@ async function seed() {
       )
     `;
   }
+  console.log(`Seed complete: inserted ${seedItems.length} grocery items.`);
 }
