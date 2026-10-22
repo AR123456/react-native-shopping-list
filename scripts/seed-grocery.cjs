@@ -11,6 +11,7 @@ if (!databaseUrl) {
 }
 
 const sql = neon(databaseUrl);
+
 const seedItems = [
   {
     name: "Bananas",
@@ -111,5 +112,11 @@ async function seed() {
       )
     `;
   }
+
   console.log(`Seed complete: inserted ${seedItems.length} grocery items.`);
 }
+
+seed().catch((error) => {
+  console.error("Seed failed:", error);
+  process.exit(1);
+});
