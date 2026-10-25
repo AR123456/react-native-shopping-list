@@ -21,9 +21,18 @@ export const createGroceryItem = (input: {
   quantity: number;
   priority: string;
 }) => {
-  await db.insert(groceryItems).values({
-    id: crypto.randomUUID(),
-  });
+  const rows = await db
+    .insert(groceryItems)
+    .values({
+      id: crypto.randomUUID(),
+      name: input.category,
+      quantity: Math.max(1, input.quantity),
+      purchased: false,
+      priority: input.priority,
+      updated_at: Date.now(),
+    })
+    .returning();
+  return rows[0];
 };
 // update
 
