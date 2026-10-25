@@ -15,7 +15,7 @@ export const listGroceryItems = async () => {
 };
 
 // create
-export const createGroceryItem = (input: {
+export const createGroceryItem = async (input: {
   name: string;
   category: string;
   quantity: number;
@@ -23,9 +23,11 @@ export const createGroceryItem = (input: {
 }) => {
   const rows = await db
     .insert(groceryItems)
+    // need to match required defined in schema
     .values({
       id: crypto.randomUUID(),
       name: input.category,
+      category: input.category,
       quantity: Math.max(1, input.quantity),
       purchased: false,
       priority: input.priority,
