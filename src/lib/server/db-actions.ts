@@ -38,14 +38,18 @@ export const createGroceryItem = async (input: {
 };
 // update - setting grocery item to purchased
 export const setGroceryItemPurchased = async (
+  // item updating and the new value
   id: string,
   purchased: boolean,
 ) => {
   const rows = await db
     .update(groceryItems)
+    // pass in the users purchased boolean
     .set({ purchased, updated_at: Date.now() })
+    // time updated
     .where(eq(groceryItems.id, id))
     .returning();
+  // if no value(nothing changed ) has changed no return
   if (!rows.length) return null;
   return rows[0];
 };
