@@ -77,3 +77,7 @@ export const updateGroceryItemQuantity = async (
 };
 
 // delete
+// delete item when user clicks on trashcan
+export const deleteGroceryItem = async (id: string) => {
+  await db.delete(groceryItems).where(eq(groceryItems.id, id));
+};
