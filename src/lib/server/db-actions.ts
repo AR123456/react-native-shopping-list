@@ -46,11 +46,12 @@ export const setGroceryItemPurchased = async (
     .update(groceryItems)
     // pass in the users purchased boolean
     .set({ purchased, updated_at: Date.now() })
-    // time updated
+    // time updated , and the id of the item updated
     .where(eq(groceryItems.id, id))
     .returning();
   // if no value(nothing changed ) has changed no return
   if (!rows.length) return null;
+  // return value at the 0 index
   return rows[0];
 };
 
