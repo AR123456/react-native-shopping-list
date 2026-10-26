@@ -58,12 +58,15 @@ export const setGroceryItemPurchased = async (
 export const updateGroceryItemQuantity = async (
   // item updating and the new value
   id: string,
-  quanity: number,
+  quantity: number,
 ) => {
   const rows = await db
     .update(groceryItems)
-    // pass in the users purchased boolean
-    .set({ purchased, updated_at: Date.now() })
+    // pass in the users quantity
+    .set({
+      quantity: Math.max(1, Math.floor(quantity)),
+      updated_at: Date.now(),
+    })
     // time updated , and the id of the item updated
     .where(eq(groceryItems.id, id))
     .returning();
