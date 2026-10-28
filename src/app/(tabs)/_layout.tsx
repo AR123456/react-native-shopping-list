@@ -6,11 +6,12 @@ export default function TabLayout() {
     <NativeTabs>
       <NativeTabs.Trigger name="index">
         <Label>Home</Label>
+        {/* do I need md for android ? */}
         <Icon sf="house.fill" drawable="custom_android_drawable" />
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="planner">
         <Icon sf="plus.circle" drawable="custom_settings_drawable" />
-        <Label>Settings</Label>
+        <Label>Planner</Label>
       </NativeTabs.Trigger>
     </NativeTabs>
   );
