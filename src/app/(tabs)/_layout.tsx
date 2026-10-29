@@ -1,16 +1,27 @@
-//  sdk 54 right from docs
-import { NativeTabs, Icon, Label } from "expo-router/unstable-native-tabs";
+import {
+  NativeTabs,
+  Icon,
+  Label,
+  VectorIcon,
+} from "expo-router/unstable-native-tabs";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function TabLayout() {
   return (
     <NativeTabs>
       <NativeTabs.Trigger name="index">
         <Label>Home tab</Label>
-        {/* do I need md for android ? */}
-        <Icon sf="house.fill" drawable="custom_android_drawable" />
+        <Icon
+          sf="house.fill"
+          src={<VectorIcon family={MaterialIcons} name="home" />}
+        />
       </NativeTabs.Trigger>
+
       <NativeTabs.Trigger name="planner">
-        <Icon sf="plus.circle" drawable="custom_settings_drawable" />
+        <Icon
+          sf="plus.circle"
+          src={<VectorIcon family={MaterialIcons} name="add-circle-outline" />}
+        />
         <Label>Planner tab</Label>
       </NativeTabs.Trigger>
     </NativeTabs>
