@@ -5,6 +5,8 @@ import {
   VectorIcon,
 } from "expo-router/unstable-native-tabs";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+//  taking care of error ios vs android
+import { Platform } from "react-native";
 
 export default function TabLayout() {
   return (
@@ -12,8 +14,10 @@ export default function TabLayout() {
       <NativeTabs.Trigger name="index">
         <Label>Home tab</Label>
         <Icon
-          sf="house.fill"
-          src={<VectorIcon family={MaterialIcons} name="home" />}
+          {...Platform.select({
+            ios: { sf: "house.fill" as const },
+            default: { src: <VectorIcon family={MaterialIcons} name="home" /> },
+          })}
         />
       </NativeTabs.Trigger>
 
