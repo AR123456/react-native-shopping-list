@@ -15,7 +15,12 @@ export default function TabLayout() {
         <Label>List</Label>
         <Icon
           {...Platform.select({
-            ios: { sf: "list.bullet.clipboard" as const },
+            ios: {
+              sf: {
+                default: "list.bullet.clipboard",
+                selected: "list.bullet.clipboard.fill",
+              } as const,
+            },
             default: {
               src: (
                 <VectorIcon
@@ -31,7 +36,12 @@ export default function TabLayout() {
       <NativeTabs.Trigger name="planner">
         <Icon
           {...Platform.select({
-            ios: { sf: "plus.circle" as const },
+            ios: {
+              sf: {
+                default: "plus.circle",
+                selected: "plus.circle.fill",
+              } as const,
+            },
             default: {
               src: (
                 <VectorIcon family={MaterialIcons} name="add-circle-outline" />
@@ -41,10 +51,16 @@ export default function TabLayout() {
         />
         <Label>Planner</Label>
       </NativeTabs.Trigger>
+
       <NativeTabs.Trigger name="insights">
         <Icon
           {...Platform.select({
-            ios: { sf: "chart.bar" as const },
+            ios: {
+              sf: {
+                default: "chart.bar",
+                selected: "chart.bar.fill",
+              } as const,
+            },
             default: {
               src: <VectorIcon family={MaterialIcons} name="insights" />,
             },
