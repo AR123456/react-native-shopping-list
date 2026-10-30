@@ -10,7 +10,7 @@ import { Platform } from "react-native";
 
 export default function TabLayout() {
   return (
-    <NativeTabs>
+    <NativeTabs tintColor="#2563eb" iconColor="gray">
       <NativeTabs.Trigger name="index">
         <Label>List</Label>
         <Icon
@@ -21,14 +21,6 @@ export default function TabLayout() {
                 <VectorIcon
                   family={MaterialIcons}
                   name="format-list-bulleted"
-                />
-              ),
-            },
-            selected: {
-              src: (
-                <VectorIcon
-                  family={MaterialIcons}
-                  name="format-list-bulleted-fill"
                 />
               ),
             },
