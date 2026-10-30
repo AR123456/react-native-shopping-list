@@ -10,7 +10,7 @@ import { Platform } from "react-native";
 
 export default function TabLayout() {
   return (
-    <NativeTabs tintColor="#2563eb" iconColor="gray">
+    <NativeTabs tintColor="#2563eb" iconColor="gray" indicatorColor="#dbeafe">
       <NativeTabs.Trigger name="index">
         <Label>List</Label>
         <Icon
