@@ -24,6 +24,14 @@ export default function TabLayout() {
                 />
               ),
             },
+            selected: {
+              src: (
+                <VectorIcon
+                  family={MaterialIcons}
+                  name="format-list-bulleted-fill"
+                />
+              ),
+            },
           })}
         />
       </NativeTabs.Trigger>
