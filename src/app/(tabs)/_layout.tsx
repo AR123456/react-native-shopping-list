@@ -43,9 +43,17 @@ export default function TabLayout() {
               } as const,
             },
             default: {
-              src: (
-                <VectorIcon family={MaterialIcons} name="add-circle-outline" />
-              ),
+              src: {
+                default: (
+                  <VectorIcon
+                    family={MaterialIcons}
+                    name="add-circle-outline"
+                  />
+                ),
+                selected: (
+                  <VectorIcon family={MaterialIcons} name="add-circle" />
+                ),
+              },
             },
           })}
         />
