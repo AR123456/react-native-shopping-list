@@ -12,11 +12,18 @@ export default function TabLayout() {
   return (
     <NativeTabs>
       <NativeTabs.Trigger name="index">
-        <Label>Home tab</Label>
+        <Label>List</Label>
         <Icon
           {...Platform.select({
-            ios: { sf: "house.fill" as const },
-            default: { src: <VectorIcon family={MaterialIcons} name="home" /> },
+            ios: { sf: "list.bullet.clipboard" as const },
+            default: {
+              src: (
+                <VectorIcon
+                  family={MaterialIcons}
+                  name="format-list-bulleted"
+                />
+              ),
+            },
           })}
         />
       </NativeTabs.Trigger>
@@ -33,6 +40,17 @@ export default function TabLayout() {
           })}
         />
         <Label>Planner tab</Label>
+      </NativeTabs.Trigger>
+      <NativeTabs.Trigger name="insights">
+        <Icon
+          {...Platform.select({
+            ios: { sf: "chart.bar" as const },
+            default: {
+              src: <VectorIcon family={MaterialIcons} name="insights" />,
+            },
+          })}
+        />
+        <Label>Insights tab</Label>
       </NativeTabs.Trigger>
     </NativeTabs>
   );
