@@ -1,5 +1,4 @@
 import { useAuth, useSignUp } from "@clerk/expo";
-import { Image } from "expo-image";
 import { type Href, Link, useRouter } from "expo-router";
 import { useState } from "react";
 import {
@@ -88,51 +87,32 @@ export default function Page() {
   }
 
   return (
-    <SafeAreaView className="flex-1 bg-primary dark:bg-secondary justify-center gap-3 p-5">
-      <View className="absolute -left-16 top-12 h-56 w-56 rounded-full bg-primary/90 dark:bg-background/40" />
-      <View className="absolute right-[-74px] top-40 h-72 w-72 rounded-full bg-primary/90 dark:bg-background/35" />
-      <View className="px-6 pt-4">
-        <Text className="text-center text-5xl font-extrabold tracking-tight text-primary-foreground uppercase font-mono dark:text-foreground">
-          Grocify
-        </Text>
-        <Text className="mt-1 text-center text-[14px] text-primary-foreground/80 dark:text-foreground/75">
-          Plan smarter. Shop happier
-        </Text>
-        <View className="mt-6 rounded-[30px] border border-white/20 bg-white/10 p-3">
-          <Image
-            source={require("../../../assets/images/auth.png")}
-            style={{ width: "100%", height: 300 }}
-            contentFit="contain"
-          />
-        </View>
-      </View>
-      <View className="mt-8 flex-1 rounded-t-[36px] bg-card px-6 pb-8 pt-6">
-        <TextInput
-          className="rounded-lg border border-gray-300 p-3 text-base"
-          autoCapitalize="none"
-          value={emailAddress}
-          placeholder="Enter email"
-          onChangeText={setEmailAddress}
-          keyboardType="email-address"
-        />
-        <TextInput
-          className="rounded-lg border border-gray-300 p-3 text-base"
-          value={password}
-          placeholder="Enter password"
-          secureTextEntry={true}
-          onChangeText={setPassword}
-        />
-        <Pressable
-          onPress={handleSignUp}
-          disabled={fetchStatus === "fetching"}
-          className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50 mt-8"
-        >
-          <Text className="text-base font-semibold text-white">Sign up</Text>
-        </Pressable>
-        <Link href="/(auth)/sign-in">
-          <Text>Already have an account? Sign in</Text>
-        </Link>
-      </View>
+    <SafeAreaView className="flex-1 justify-center gap-3 p-5">
+      <TextInput
+        className="rounded-lg border border-gray-300 p-3 text-base"
+        autoCapitalize="none"
+        value={emailAddress}
+        placeholder="Enter email"
+        onChangeText={setEmailAddress}
+        keyboardType="email-address"
+      />
+      <TextInput
+        className="rounded-lg border border-gray-300 p-3 text-base"
+        value={password}
+        placeholder="Enter password"
+        secureTextEntry={true}
+        onChangeText={setPassword}
+      />
+      <Pressable
+        onPress={handleSignUp}
+        disabled={fetchStatus === "fetching"}
+        className="items-center rounded-lg bg-blue-600 p-3 active:bg-blue-700 disabled:opacity-50"
+      >
+        <Text className="text-base font-semibold text-white">Sign up</Text>
+      </Pressable>
+      <Link href="/(auth)/sign-in">
+        <Text>Already have an account? Sign in</Text>
+      </Link>
       {/* Required for sign-up flows on Expo web. Clerk skips the browser CAPTCHA on iOS and Android */}
       <View nativeID="clerk-captcha" />
     </SafeAreaView>
