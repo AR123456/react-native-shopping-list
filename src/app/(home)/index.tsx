@@ -1,5 +1,5 @@
 // TBD content
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, Text } from "react-native";
 import { Link } from "expo-router";
 import { Show, useClerk, useUser } from "@clerk/expo";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -20,7 +20,7 @@ export default function Page() {
       </Show>
       <Show when="signed-in">
         <Text className="text-base">
-          Hello user {user?.emailAddresses[0].emailAddress}
+          Hello user {user?.primaryEmailAddress?.emailAddress}
         </Text>
         <Pressable
           onPress={() => signOut()}
