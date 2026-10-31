@@ -9,7 +9,7 @@ export default function Page() {
 
   return (
     <SafeAreaView className="flex-1 justify-center gap-3 p-5">
-      <Text className="text-xl font-semibold">Welcome</Text>
+      <Text className="mb-4 text-xl font-semibold">Welcome</Text>
       <Show when="signed-out">
         <Link href="/(auth)/sign-in">
           <Text>Sign in</Text>
