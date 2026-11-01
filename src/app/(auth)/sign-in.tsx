@@ -2,7 +2,7 @@
 import { useSignIn } from "@clerk/expo";
 import { Link } from "expo-router";
 import { useState } from "react";
-import { Pressable, Text, TextInput } from "react-native";
+import { Pressable, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 export default function Page() {
   const { signIn, fetchStatus } = useSignIn();
@@ -80,6 +80,8 @@ export default function Page() {
 
   return (
     <SafeAreaView className="flex-1 bg-primary dark:bg-secondary justify-center gap-3 p-5">
+      {/* decorative elements  */}
+      <View className="absolute -left-16 top-12 h-56 w-56 rounded-full bg-primary/80 dark:bg-background/40" />
       <TextInput
         className="rounded-lg border border-gray-300 p-3 text-base"
         autoCapitalize="none"
