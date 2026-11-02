@@ -44,11 +44,9 @@ export default function TabLayout() {
       <NativeTabs.Trigger name="insights">
         <Icon
           {...Platform.select({
-            ios: { sf: "plus.circle" as const },
+            ios: { sf: "chart.bar" as const },
             default: {
-              src: (
-                <VectorIcon family={MaterialIcons} name="add-circle-outline" />
-              ),
+              src: <VectorIcon family={MaterialIcons} name="insights" />,
             },
           })}
         />
