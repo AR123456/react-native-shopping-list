@@ -20,7 +20,7 @@ export default function TabLayout() {
               src: (
                 <VectorIcon
                   family={MaterialIcons}
-                  name="list.bullet.clipboard"
+                  name="format-list-bulleted"
                 />
               ),
             },
