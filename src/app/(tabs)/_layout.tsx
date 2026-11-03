@@ -20,7 +20,7 @@ export default function TabLayout() {
               src: (
                 <VectorIcon
                   family={MaterialIcons}
-                  name="format-list-bulleted"
+                  name="list.bullet.clipboard"
                 />
               ),
             },
@@ -40,17 +40,6 @@ export default function TabLayout() {
           })}
         />
         <Label>Planner tab</Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="insights">
-        <Icon
-          {...Platform.select({
-            ios: { sf: "chart.bar" as const },
-            default: {
-              src: <VectorIcon family={MaterialIcons} name="insights" />,
-            },
-          })}
-        />
-        <Label>Insights tab</Label>
       </NativeTabs.Trigger>
     </NativeTabs>
   );
