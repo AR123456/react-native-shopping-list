@@ -39,7 +39,7 @@ export default function TabLayout() {
             },
           })}
         />
-        <Label>Planner tab</Label>
+        <Label>Planner</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="insights">
         <Icon
@@ -50,7 +50,7 @@ export default function TabLayout() {
             },
           })}
         />
-        <Label>Insights tab</Label>
+        <Label>Insights</Label>
       </NativeTabs.Trigger>
     </NativeTabs>
   );

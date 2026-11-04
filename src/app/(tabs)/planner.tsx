@@ -4,7 +4,7 @@ import React from "react";
 const PlannerScreen = () => {
   return (
     <View>
-      <Text>PlannerScreen</Text>
+      <Text className="text-white">PlannerScreen</Text>
     </View>
   );
 };
