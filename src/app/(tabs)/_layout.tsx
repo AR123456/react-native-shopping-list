@@ -67,7 +67,12 @@ export default function TabLayout() {
               } as const,
             },
             default: {
-              src: <VectorIcon family={MaterialIcons} name="insights" />,
+              src: {
+                default: <VectorIcon family={MaterialIcons} name="insights" />,
+                selected: (
+                  <VectorIcon family={MaterialIcons} name="multiline-chart" />
+                ),
+              },
             },
           })}
         />
