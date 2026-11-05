@@ -10,7 +10,7 @@ import { Platform } from "react-native";
 
 export default function TabLayout() {
   return (
-    <NativeTabs tintColor="#2563eb" iconColor="gray" indicatorColor="#dbeafe">
+    <NativeTabs tintColor="red" indicatorColor="#dbeafe">
       <NativeTabs.Trigger name="index">
         <Label>List</Label>
         <Icon
@@ -43,17 +43,9 @@ export default function TabLayout() {
               } as const,
             },
             default: {
-              src: {
-                default: (
-                  <VectorIcon
-                    family={MaterialIcons}
-                    name="add-circle-outline"
-                  />
-                ),
-                selected: (
-                  <VectorIcon family={MaterialIcons} name="add-circle" />
-                ),
-              },
+              src: (
+                <VectorIcon family={MaterialIcons} name="add-circle-outline" />
+              ),
             },
           })}
         />
