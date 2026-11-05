@@ -4,14 +4,19 @@ import {
   Label,
   VectorIcon,
 } from "expo-router/unstable-native-tabs";
+
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 //  taking care of error ios vs android
-import { Platform } from "react-native";
+import { Platform, useColorScheme } from "react-native";
 
 export default function TabLayout() {
+  const { colorScheme } = useColorScheme();
+  const isDark = colorScheme === "dark";
+  const tabTintColor = isDark ? "hsl(142 70% 54%)" : "hsl(147 75% 33%)";
+
   return (
     <NativeTabs
-      tintColor="#2563eb"
+      tintColor={tabTintColor}
       indicatorColor="#bfdbfe"
       labelVisibilityMode="labeled"
       backgroundColor="#eff6ff"
