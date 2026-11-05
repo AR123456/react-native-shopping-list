@@ -7,8 +7,8 @@ import {
 
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 //  taking care of error ios vs android
-import { Platform, useColorScheme } from "react-native";
-
+import { Platform } from "react-native";
+import { useColorScheme } from "nativewind";
 export default function TabLayout() {
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === "dark";
