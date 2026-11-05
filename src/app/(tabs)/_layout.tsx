@@ -13,7 +13,8 @@ export default function TabLayout() {
     <NativeTabs
       tintColor="#2563eb"
       indicatorColor="#bfdbfe"
-      labelVisibilityMode="selected"
+      labelVisibilityMode="labeled"
+      backgroundColor="#eff6ff"
     >
       <NativeTabs.Trigger name="index">
         <Label>List</Label>
