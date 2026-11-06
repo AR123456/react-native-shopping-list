@@ -3,6 +3,7 @@ import {
   Icon,
   Label,
   VectorIcon,
+  Badge,
 } from "expo-router/unstable-native-tabs";
 
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
@@ -44,6 +45,8 @@ export default function TabLayout() {
             },
           })}
         />
+        <Badge>9+</Badge>
+        {/*   <Badge /> */}
       </NativeTabs.Trigger>
 
       <NativeTabs.Trigger name="planner">
