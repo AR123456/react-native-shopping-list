@@ -4,7 +4,7 @@ import React from "react";
 const InsightsScreen = () => {
   return (
     <View>
-      <Text>iInsights</Text>
+      <Text className="text-white">iInsights</Text>
     </View>
   );
 };
