@@ -10,13 +10,14 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 //  taking care of error ios vs android
 import { Platform } from "react-native";
 import { useColorScheme } from "nativewind";
+import { Redirect } from "expo-router";
 
 export default function TabLayout() {
-  // check signed in
-  // load grocery store items
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === "dark";
   const tabTintColor = isDark ? "hsl(142 70% 54%)" : "hsl(147 75% 33%)";
+  // check signed in
+  // load grocery store items
 
   return (
     <NativeTabs
