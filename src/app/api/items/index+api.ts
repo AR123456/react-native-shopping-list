@@ -10,7 +10,7 @@ export async function GET() {
     // return by value
     return Response.json({ items });
   } catch (error) {
-    const message = error.instnaceof.Error
+    const message = error.instanceof.Error
       ? error.message
       : "Failed to fetch items";
     //return the response to front end
