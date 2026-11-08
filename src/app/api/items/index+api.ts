@@ -9,5 +9,10 @@ export async function GET() {
     const items = await listGroceryItems();
     // return by value
     return Response.json({ items });
-  } catch (error) {}
+  } catch (error) {
+    const message = error.instnaceof.Error
+      ? error.message
+      : "Failed to fetch items";
+    //
+  }
 }
