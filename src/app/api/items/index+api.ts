@@ -7,5 +7,7 @@ export async function GET() {
   try {
     // db call
     const items = await listGroceryItems();
+    // return by value
+    return Response.json({ items: items });
   } catch (error) {}
 }
