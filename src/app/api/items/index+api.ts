@@ -13,6 +13,7 @@ export async function GET() {
     const message = error.instnaceof.Error
       ? error.message
       : "Failed to fetch items";
-    //
+    //return the response to front end
+    return Response.json({ error: message }, { status: 500 });
   }
 }
