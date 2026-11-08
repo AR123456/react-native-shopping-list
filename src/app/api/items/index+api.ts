@@ -8,6 +8,6 @@ export async function GET() {
     // db call
     const items = await listGroceryItems();
     // return by value
-    return Response.json({ items: items });
+    return Response.json({ items });
   } catch (error) {}
 }
