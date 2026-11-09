@@ -16,8 +16,11 @@ export async function GET() {
     return Response.json({ error: message }, { status: 500 });
   }
 }
+// post for the create action
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    // user passing
+    const { name, category, quantity, priority } = body;
   } catch (error) {}
 }
