@@ -1,6 +1,9 @@
 // api routs - to match up with actions in the db-actions file
 
-import { listGroceryItems } from "@/src/lib/server/db-actions";
+import {
+  createGroceryItem,
+  listGroceryItems,
+} from "@/src/lib/server/db-actions";
 
 //export any of the following functions GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS from a server route
 export async function GET() {
@@ -20,7 +23,16 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    // user passing
+    // user passing - quantity is not required since default is min of 1
     const { name, category, quantity, priority } = body;
+    // check to make sure all are provided
+    if (!name || !category || !priority) {
+      return Response.json(
+        { error: "Please provide all required fields." },
+        { status: 400 },
+      );
+    }
+    // call mutation
+    await createGroceryItem({});
   } catch (error) {}
 }
