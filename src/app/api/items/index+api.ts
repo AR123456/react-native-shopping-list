@@ -41,5 +41,9 @@ export async function POST(request: Request) {
     });
     // return item or error
     return Response.json({ item }, { status: 201 });
-  } catch (error) {}
+  } catch (error) {
+    // catch any errors
+    const message =
+      error instanceof Error ? error.message : "Failed to create item";
+  }
 }
