@@ -33,11 +33,6 @@ export async function POST(request: Request) {
       );
     }
     // call mutation
-    const item = await createGroceryItem({
-      name,
-      category,
-      quantity,
-      priority,
-    });
+    await createGroceryItem({});
   } catch (error) {}
 }
