@@ -33,6 +33,13 @@ export async function POST(request: Request) {
       );
     }
     // call mutation
-    await createGroceryItem({});
+    const item = await createGroceryItem({
+      name,
+      category,
+      quantity,
+      priority,
+    });
+    // return item or error
+    return Response.json({ item }, { status: 201 });
   } catch (error) {}
 }
