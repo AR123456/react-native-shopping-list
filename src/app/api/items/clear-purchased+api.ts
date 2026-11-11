@@ -3,5 +3,6 @@
 import { clearPurchasedItems } from "@/src/lib/server/db-actions";
 export async function POST() {
   try {
+    await clearPurchasedItems();
   } catch (error) {}
 }
