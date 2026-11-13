@@ -1,6 +1,11 @@
 // dynamic route
 
 import { deleteGroceryItem } from "@/src/lib/server/db-actions";
+// patch or update
+export async function PATCH(params: type) {
+  try {
+  } catch (error) {}
+}
 
 //delete one
 export async function DELETE(_request: Request, { id }: { id: string }) {
