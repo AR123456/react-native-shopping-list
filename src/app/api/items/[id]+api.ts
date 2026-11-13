@@ -2,8 +2,10 @@
 
 import { deleteGroceryItem } from "@/src/lib/server/db-actions";
 // patch or update
-export async function PATCH(params: type) {
+export async function PATCH(request: Request, { id }: { id: string }) {
   try {
+    const body = await request.json();
+    const item = body.quantity;
   } catch (error) {}
 }
 
