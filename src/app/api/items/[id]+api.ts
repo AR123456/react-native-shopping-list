@@ -1,11 +1,17 @@
 // dynamic route
 
-import { deleteGroceryItem, updateGroceryItemQuantity } from "@/src/lib/server/db-actions";
+import {
+  deleteGroceryItem,
+  setGroceryItemPurchased,
+  updateGroceryItemQuantity,
+} from "@/src/lib/server/db-actions";
 // patch or update
 export async function PATCH(request: Request, { id }: { id: string }) {
   try {
     const body = await request.json();
-    const item = body.quantity ? await updateGroceryItemQuantity(id,body.quantity):
+    const item = body.quantity
+      ? await updateGroceryItemQuantity(id, body.quantity)
+      : await setGroceryItemPurchased(id, body.purchased ?? true);
   } catch (error) {}
 }
 
