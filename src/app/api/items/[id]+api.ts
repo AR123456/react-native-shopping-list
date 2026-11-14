@@ -8,7 +8,9 @@ import {
 // patch or update
 export async function PATCH(request: Request, { id }: { id: string }) {
   try {
+    // get body from client
     const body = await request.json();
+    // update quantity or purchased
     const item = body.quantity
       ? await updateGroceryItemQuantity(id, body.quantity)
       : await setGroceryItemPurchased(id, body.purchased ?? true);
