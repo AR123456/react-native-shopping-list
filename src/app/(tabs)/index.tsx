@@ -7,6 +7,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Page() {
   const { user } = useUser();
   const { signOut } = useClerk();
+  const { isLoading, posts } = useGroceryStore();
+  console.log(posts);
 
   return (
     <SafeAreaView className="flex-1 justify-center gap-3 p-5">
