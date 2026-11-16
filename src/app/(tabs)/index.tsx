@@ -1,4 +1,3 @@
-import { useGroceryStore } from "@/src/store/grocery-store";
 // TBD content
 import { Pressable, Text } from "react-native";
 import { Link } from "expo-router";
