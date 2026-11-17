@@ -12,6 +12,12 @@ export type GroceryItem = {
   purchased: boolean;
   priority: GroceryPriority;
 };
+export type CreateItemInput = {
+  name: string;
+  category: GroceryCategory;
+  quantity: number;
+  priority: GroceryPriority;
+};
 // return and object
 export const useGroceryStore = create<GroceryStore>((set, get) => ({
   // this is global state
