@@ -18,6 +18,18 @@ export type CreateItemInput = {
   quantity: number;
   priority: GroceryPriority;
 };
+// response itemes
+type ItemsResponse = { items: GroceryItem[] };
+type ItemResponse = { items: GroceryItem };
+// now store types
+type GroceryStore = {
+  items: GroceryItem;
+  isLoading: boolean;
+  error: string | null;
+  //load items method
+  loadItems: () => Promise<void>;
+};
+
 // return and object
 export const useGroceryStore = create<GroceryStore>((set, get) => ({
   // this is global state
