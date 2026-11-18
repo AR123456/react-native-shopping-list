@@ -32,6 +32,7 @@ type GroceryStore = {
   updateQuantity: (id: string, quantity: number) => Promise<void>;
   togglePurchased: (id: string) => Promise<void>;
   removeItem: (id: string) => Promise<void>;
+  clearPurchased: () => Promise<void>;
 };
 
 // return and object
