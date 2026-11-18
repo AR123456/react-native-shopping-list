@@ -28,6 +28,7 @@ type GroceryStore = {
   error: string | null;
   //load items method
   loadItems: () => Promise<void>;
+  addItem: (input: CreateItemInput) => Promise<GroceryItem | void>;
 };
 
 // return and object
