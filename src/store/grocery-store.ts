@@ -30,6 +30,7 @@ type GroceryStore = {
   loadItems: () => Promise<void>;
   addItem: (input: CreateItemInput) => Promise<GroceryItem | void>;
   updateQuantity: (id: string, quantity: number) => Promise<void>;
+  togglePurchased: (id: string) => Promise<void>;
 };
 
 // return and object
