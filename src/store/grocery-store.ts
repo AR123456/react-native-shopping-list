@@ -23,7 +23,7 @@ type ItemsResponse = { items: GroceryItem[] };
 type ItemResponse = { items: GroceryItem };
 // now store types
 type GroceryStore = {
-  items: GroceryItem;
+  items: GroceryItem[];
   isLoading: boolean;
   error: string | null;
   //load items method
