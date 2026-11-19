@@ -44,7 +44,16 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   isLoading: false,
   error: null,
   // store items to call to the back end
-  loadItems: async () => {},
+  loadItems: async () => {
+    set({});
+    try {
+      set({};)
+    } catch (error) {
+      
+    }finally{
+      set({})
+    }
+  },
   addItem: async () => {},
   updateQuantity: async () => {},
   togglePurchased: async () => {},
