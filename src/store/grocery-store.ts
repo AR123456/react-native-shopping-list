@@ -45,9 +45,12 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   error: null,
   // store items to call to the back end
   loadItems: async () => {
-    set({});
+    set({isLoading:true,error:null});
     try {
-      set({};)
+      const res = await fetch("./api/items");
+      const payload = (await res.json()) as ItemsResponse;
+      if(!res.ok) throw new Error(`Request failed(${res.status})`);
+      set({items:payload.items};)
     } catch (error) {
       
     }finally{
