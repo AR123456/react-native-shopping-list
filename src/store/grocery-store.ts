@@ -1,5 +1,6 @@
 //  for calling routes - global can be used in any components
 import { create } from "zustand";
+import { clearPurchasedItems } from "../lib/server/db-actions";
 //  user choices for the category card in UI
 export type GroceryCategory =
   "Produce" | "Dairy" | "Bakery" | "Pantry" | "Snacks";
@@ -40,7 +41,13 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   // this is global state
   // state name:["value of state"]
   items: [],
-  isLoading:false;
-  error:null;
-  
+  isLoading: false,
+  error: null,
+  // store items to call to the back end
+  loadItems: async () => {},
+  addItem: async () => {},
+  updateQuantity: async () => {},
+  togglePurchased: async () => {},
+  removeItem: async () => {},
+  clearPurchased: async () => {},
 }));
