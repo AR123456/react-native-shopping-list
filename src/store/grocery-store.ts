@@ -39,4 +39,5 @@ type GroceryStore = {
 export const useGroceryStore = create<GroceryStore>((set, get) => ({
   // this is global state
   // state name:["value of state"]
+  items: [],
 }));
