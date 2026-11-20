@@ -63,7 +63,14 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set({ isLoading: false });
     }
   },
-  addItem: async () => {},
+  addItem: async () => {
+    // setter
+    set({});
+    try {
+    } catch (error) {
+    } finally {
+    }
+  },
   updateQuantity: async () => {},
   togglePurchased: async () => {},
   removeItem: async () => {},
