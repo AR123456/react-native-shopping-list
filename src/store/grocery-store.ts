@@ -43,19 +43,23 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   items: [],
   isLoading: false,
   error: null,
-  // store items to call to the backend
+  // store methods items to call to the backend
   loadItems: async () => {
+    // loading state updated using set method
     set({ isLoading: true, error: null });
     try {
       const res = await fetch("/api/items");
+      // type of any needs to be wrapped in parens
       const payload = (await res.json()) as ItemsResponse;
-
+      // err handling
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      // update items array
       set({ items: payload.items });
     } catch (error) {
       console.error("Error loading items:", error);
       set({ error: "Something went wrong" });
     } finally {
+      // put loasing state back to false
       set({ isLoading: false });
     }
   },
