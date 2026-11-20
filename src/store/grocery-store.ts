@@ -55,7 +55,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       console.error("Error loading items: ", error);
       set({ error: "Something went wrong" });
     } finally {
-      set({});
+      set({ isLoading: false });
     }
   },
   addItem: async () => {},
