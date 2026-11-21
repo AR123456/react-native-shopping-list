@@ -63,13 +63,18 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set({ isLoading: false });
     }
   },
-  addItem: async () => {
+  addItem: async (input) => {
     set({ error: null });
     try {
       const res = await fetch("/api/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({}),
+        body: JSON.stringify({
+          name: input.name,
+          category: input.category,
+          quantity: Math.max(1, input.quantity),
+          priority: input.priority,
+        }),
       });
     } catch (error) {
     } finally {
