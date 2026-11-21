@@ -81,6 +81,8 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set((state) => ({ items: [payload.items, ...state.items] }));
       return payload.items;
     } catch (error) {
+      console.error("Error adding item: ", error);
+      set({ error: "Something went wrong" });
     } finally {
     }
   },
