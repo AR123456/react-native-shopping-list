@@ -76,6 +76,10 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
           priority: input.priority,
         }),
       });
+      const payload = (await res.json()) as ItemResponse;
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      set((state) => ({ items: [payload.items, ...state.items] }));
+      return payload.items;
     } catch (error) {
     } finally {
     }
