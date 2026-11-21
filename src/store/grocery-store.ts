@@ -21,7 +21,7 @@ export type CreateItemInput = {
 };
 // response itemes
 type ItemsResponse = { items: GroceryItem[] };
-type ItemResponse = { items: GroceryItem };
+type ItemResponse = { item: GroceryItem };
 // now store types
 type GroceryStore = {
   items: GroceryItem[];
@@ -78,12 +78,12 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       });
       const payload = (await res.json()) as ItemResponse;
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
-      set((state) => ({ items: [payload.items, ...state.items] }));
-      return payload.items;
+
+      set((state) => ({ items: [payload.item, ...state.items] }));
+      return payload.item;
     } catch (error) {
-      console.error("Error adding item: ", error);
+      console.error("Error adding item:", error);
       set({ error: "Something went wrong" });
-    } finally {
     }
   },
   updateQuantity: async () => {},
