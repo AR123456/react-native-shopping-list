@@ -87,7 +87,9 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set({ error: "Something went wrong" });
     }
   },
-  updateQuantity: async () => {},
+  updateQuantity: async (id, quantity) => {
+    //
+  },
   togglePurchased: async () => {},
   removeItem: async () => {},
   clearPurchased: async () => {},
