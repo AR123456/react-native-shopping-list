@@ -1,3 +1,4 @@
+import { useGroceryStore } from "@/store/grocery-store";
 import {
   NativeTabs,
   Icon,
@@ -11,14 +12,19 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { Platform } from "react-native";
 import { useColorScheme } from "nativewind";
 import { Redirect } from "expo-router";
+import { useEffect } from "react";
 
 export default function TabLayout() {
+  // check signed in
+  // load grocery store items
+  const { loadItems, items } = useGroceryStore();
   const { colorScheme } = useColorScheme();
   const isDark = colorScheme === "dark";
   const tabTintColor = isDark ? "hsl(142 70% 54%)" : "hsl(147 75% 33%)";
-  // check signed in
-  // load grocery store items
-
+  useEffect(() => {
+    loadItems();
+  }, []);
+  console.log("ITEMS:", items);
   return (
     <NativeTabs
       tintColor={tabTintColor}
