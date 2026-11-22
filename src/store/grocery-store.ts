@@ -66,6 +66,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   addItem: async (input) => {
     set({ error: null });
     try {
+      // with form submit
       const res = await fetch("/api/items", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -78,7 +79,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       });
       const payload = (await res.json()) as ItemResponse;
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
-
+      // this puts the newest, just added item at the top of list in ui
       set((state) => ({ items: [payload.item, ...state.items] }));
       return payload.item;
     } catch (error) {

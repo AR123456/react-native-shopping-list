@@ -24,7 +24,7 @@ export default function TabLayout() {
   useEffect(() => {
     loadItems();
   }, []);
-  console.log("ITEMS:", items);
+
   return (
     <NativeTabs
       tintColor={tabTintColor}
