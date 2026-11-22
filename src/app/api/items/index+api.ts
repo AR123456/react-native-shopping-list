@@ -1,9 +1,6 @@
 // api routs - to match up with actions in the db-actions file
 
-import {
-  createGroceryItem,
-  listGroceryItems,
-} from "@/src/lib/server/db-actions";
+import { createGroceryItem, listGroceryItems } from "@/lib/server/db-actions";
 
 //export any of the following functions GET, POST, PUT, PATCH, DELETE, HEAD, and OPTIONS from a server route
 export async function GET() {

@@ -4,7 +4,7 @@ import {
   deleteGroceryItem,
   setGroceryItemPurchased,
   updateGroceryItemQuantity,
-} from "@/src/lib/server/db-actions";
+} from "@/lib/server/db-actions";
 // patch or update
 export async function PATCH(request: Request, { id }: { id: string }) {
   try {
