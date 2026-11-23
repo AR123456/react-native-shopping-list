@@ -93,7 +93,11 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     // Zustands update store state- no error right now
     set({ error: null });
     try {
-      ///
+      const res = await fetch(`/api/items/${id}`, {
+        method:"PATCH",
+        headers:{},
+        body:
+      });
     } catch (error) {
       //
     }
