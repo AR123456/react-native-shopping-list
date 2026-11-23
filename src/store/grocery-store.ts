@@ -107,7 +107,8 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
         ),
       }));
     } catch (error) {
-      //
+      console.error("Error updating quantity", error);
+      set({ error: "Something went wrong" });
     }
   },
   togglePurchased: async () => {},
