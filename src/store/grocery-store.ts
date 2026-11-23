@@ -99,6 +99,8 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity: nextQuantity }),
       });
+      const payload = (await res.json()) as ItemResponse;
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
     } catch (error) {
       //
     }
