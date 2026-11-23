@@ -90,6 +90,13 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   updateQuantity: async (id, quantity) => {
     //quantity should never be less than 0
     const nextQuantity = Math.max(1, quantity);
+    // Zustands update store state- no error right now
+    set({ error: null });
+    try {
+      ///
+    } catch (error) {
+      //
+    }
   },
   togglePurchased: async () => {},
   removeItem: async () => {},
