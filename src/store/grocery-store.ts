@@ -112,7 +112,11 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set({ error: "Something went wrong" });
     }
   },
-  togglePurchased: async () => {},
+  togglePurchased: async () => {
+    // const to keep track of state
+    // set state
+    // try catch  call the api , define payload set state when done, error handling
+  },
   removeItem: async () => {},
   clearPurchased: async () => {},
 }));
