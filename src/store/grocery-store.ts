@@ -115,8 +115,11 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   togglePurchased: async (id, quantity) => {
     const nextQuantity = Math.max(1, quantity);
     set({ error: null });
-    // set state
-    // try catch  call the api , define payload set state when done, error handling
+    try {
+      //
+    } catch (error) {
+      //
+    }
   },
   removeItem: async () => {},
   clearPurchased: async () => {},
