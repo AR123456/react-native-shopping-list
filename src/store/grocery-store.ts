@@ -113,7 +113,8 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     }
   },
   togglePurchased: async () => {
-    // const to keep track of state
+    const nextQuantity = Math.max(1, quantity);
+    set({ error: null });
     // set state
     // try catch  call the api , define payload set state when done, error handling
   },
