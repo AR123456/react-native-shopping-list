@@ -87,6 +87,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set({ error: "Something went wrong" });
     }
   },
+  // another Zustand action
   updateQuantity: async (id, quantity) => {
     //quantity should never be less than 0
     const nextQuantity = Math.max(1, quantity);
@@ -99,8 +100,8 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ quantity: nextQuantity }),
       });
-      const payload = (await res.json()) as ItemResponse;
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      const payload = (await res.json()) as ItemResponse;
       set((state) => ({
         items: state.items.map((item) =>
           item.id === id ? payload.item : item,
