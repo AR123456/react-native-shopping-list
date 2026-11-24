@@ -112,7 +112,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set({ error: "Something went wrong" });
     }
   },
-  togglePurchased: async () => {
+  togglePurchased: async (id, quantity) => {
     const nextQuantity = Math.max(1, quantity);
     set({ error: null });
     // set state
