@@ -116,7 +116,11 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     const nextQuantity = Math.max(1, quantity);
     set({ error: null });
     try {
-      const res = await fetch(`/api/items/${id}`, {});
+      const res = await fetch(`/api/items/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ quantity: nextQuantity }),
+      });
     } catch (error) {
       //
     }
