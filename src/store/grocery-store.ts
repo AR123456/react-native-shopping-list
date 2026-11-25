@@ -116,7 +116,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     const nextQuantity = Math.max(1, quantity);
     set({ error: null });
     try {
-      //
+      const res = await fetch(`/api/items/${id}`, {});
     } catch (error) {
       //
     }
