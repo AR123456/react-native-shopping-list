@@ -112,9 +112,9 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       set({ error: "Something went wrong" });
     }
   },
-  togglePurchased: async (id, quantity) => {
-    const nextQuantity = Math.max(1, quantity);
-    set({ error: null });
+  togglePurchased: async (id) => {
+    const currentItem = get().items.find((item) => item.id === id);
+    if (!currentItem) return;
     try {
       const res = await fetch(`/api/items/${id}`, {
         method: "PATCH",
@@ -129,7 +129,8 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
         ),
       }));
     } catch (error) {
-      //
+      console.error("Error updating quantity:", error);
+      set({ error: "Something went wrong" });
     }
   },
   removeItem: async () => {},
