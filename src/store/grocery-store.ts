@@ -121,7 +121,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
       const res = await fetch(`/api/items/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ quantity: nextQuantity }),
+        body: JSON.stringify({ purchased: nextPurchased }),
       });
       const payload = (await res.json()) as ItemResponse;
       if (!res.ok) throw new Error(`Request failed(${res.status})`);
