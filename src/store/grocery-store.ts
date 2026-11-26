@@ -124,7 +124,8 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
         body: JSON.stringify({ purchased: nextPurchased }),
       });
       const payload = (await res.json()) as ItemResponse;
-      if (!res.ok) throw new Error(`Request failed(${res.status})`);
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      //
       set((state) => ({
         items: state.items.map((item) =>
           item.id === id ? payload.item : item,
