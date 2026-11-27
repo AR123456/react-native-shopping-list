@@ -139,6 +139,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   removeItem: async (id) => {
     set({ error: null });
     try {
+      const res = await fetch(`/api/items/${id}`, { method: "DELETE" });
     } catch (error) {}
   },
   clearPurchased: async () => {},
