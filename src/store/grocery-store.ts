@@ -137,7 +137,9 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     }
   },
   removeItem: async (id) => {
-    // Delete just one
+    set({ error: null });
+    try {
+    } catch (error) {}
   },
   clearPurchased: async () => {},
 }));
