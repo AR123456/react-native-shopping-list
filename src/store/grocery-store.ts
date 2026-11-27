@@ -141,6 +141,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     try {
       const res = await fetch(`/api/items/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      set((state) => ({ items: state.items.filter((item) => item.id !== id) }));
     } catch (error) {}
   },
   clearPurchased: async () => {},
