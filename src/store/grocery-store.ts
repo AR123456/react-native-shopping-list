@@ -152,6 +152,7 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     try {
       const res = await fetch("/api/items/clear-purchased", { method: "POST" });
       if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      const items = get().items.filter((item) => !item.purchased);
     } catch (error) {
       console.error("Error clearing purhased", error);
       set({ error: "Something went wrong" });
