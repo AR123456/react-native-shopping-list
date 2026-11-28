@@ -149,5 +149,10 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
   },
   clearPurchased: async () => {
     set({ error: null });
+    try {
+    } catch (error) {
+      console.error("Error clearing purhased", error);
+      set({ error: "Something went wrong" });
+    }
   },
 }));
