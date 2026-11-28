@@ -148,12 +148,6 @@ export const useGroceryStore = create<GroceryStore>((set, get) => ({
     }
   },
   clearPurchased: async () => {
-    // setter to ck load and err
-    //trycatch  res payload and payload of things set to purchased
-    // error nadling
-    // restore loading state
-    // catch any errors
-    // finaly del items marked as purchased
-    // items remaining become new list of items
+    set({ error: null });
   },
 }));
